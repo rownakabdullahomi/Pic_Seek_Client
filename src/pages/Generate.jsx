@@ -1,18 +1,24 @@
 const Generate = () => {
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const prompt = e.target.prompt.value;
     const form = new FormData();
     form.append("prompt", prompt);
 
-    fetch('https://clipdrop-api.co/text-to-image/v1', {
-        method: 'POST',
-        headers: {
-          'x-api-key': import.meta.env.VITE_CD_KEY,
-        },
-        body: form,
-      })
+    fetch("https://clipdrop-api.co/text-to-image/v1", {
+      method: "POST",
+      headers: {
+        "x-api-key": import.meta.env.VITE_CD_KEY,
+      },
+      body: form,
+    })
+      .then((response) => response.arrayBuffer())
+      .then((buffer) => {
+        console.log(buffer);
+        const blob = new Blob([buffer], {type: "image/png"});
+        const url = URL.createObjectURL(blob);
+        console.log(url);
+      });
   };
   return (
     <div className="w-11/12 mx-auto pt-10">
