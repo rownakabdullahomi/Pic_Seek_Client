@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const Navbar = () => {
   return (
     <div className="navbar bg-base-100 shadow-sm">
@@ -5,22 +7,13 @@ const Navbar = () => {
         <a className="btn btn-ghost text-xl">PIC_SEEK</a>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Link</a>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="bg-base-100 rounded-t-none p-2">
-                <li>
-                  <a>Link 1</a>
-                </li>
-                <li>
-                  <a>Link 2</a>
-                </li>
-              </ul>
-            </details>
+        <ul className="px-1">
+          <li className="flex gap-6">
+            <Link>Home</Link>
+            <Link>All Images</Link>
+            <Link>Generate Images</Link>
+            <Link>Login</Link>
+            
           </li>
         </ul>
       </div>
