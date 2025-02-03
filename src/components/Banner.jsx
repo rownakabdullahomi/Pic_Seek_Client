@@ -3,7 +3,7 @@ import { Link } from "react-router";
 const Banner = () => {
   return (
     <div
-      className="hero h-[500px]"
+      className="hero h-[550px]"
       style={{
         backgroundImage:
           "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",

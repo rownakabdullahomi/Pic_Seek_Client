@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
   return (
@@ -9,11 +9,8 @@ const Navbar = () => {
       <div className="flex-none">
         <ul className="px-1">
           <li className="flex gap-6">
-            <Link>Home</Link>
-            <Link>All Images</Link>
-            <Link>Generate Images</Link>
-            <Link>Login</Link>
-            
+            <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={"/generate"}>Generate Images</NavLink>
           </li>
         </ul>
       </div>
